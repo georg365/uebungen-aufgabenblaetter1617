@@ -2,12 +2,20 @@ package aufgabenblatt3;
 
 class Rational {
 	
+	//Soweit okay, jedoch soll ein Rational Objekt immer für sich stehen und als Objekt existieren, daher auch 
+	//die Konstruktoren. Das heißt, dass hier alle Variablen und Methoden Objektvariablen und -methoden sind.
+	//Also nicht statisch, da dann nicht mehr zwischen Objekten unterschieden werden kann.
+	//Siehe auch Musterlösung in unserem repository: 
+	//https://github.com/TUB-VSP-AIfI/uebungen-aufgabenblaetter1617/blob/master/src/musterLoesungen/aufgabenblatt3/Rational.java
 	
 	
+	//Aufpassen! Jeder Bruch, also jedes Rational-Objekt besitzt seinen eigenen Zaehler und Nenner! Daher nicht statisch
+	//setzen, sonst sind die beiden Variablen für jedes Rational Objekt gleich.
 	// 1. Instanzvariablen
 	static int zaehler;
 	static int nenner;
 	
+	//richtig.
 	// 2. Konstruktor ohne Argumente
 	Rational(){
 		zaehler = 0;
@@ -17,7 +25,7 @@ class Rational {
 	// 3. Ausgabemethode
 	public static void printRational(){
 			
-		System.out.println("Der Z�hler ist: " + zaehler);
+		System.out.println("Der Zähler ist: " + zaehler);
 		System.out.println("Der Nenner ist: " + nenner);
 	}
 	
@@ -52,6 +60,7 @@ class Rational {
 		System.out.println(toDouble());
 	}
 	
+	//hier würdest du dann die eingenen Variablen setzen, wenn sie nicht statisch wären.
 	// 6. Konstruktor mit Argumenten
 	Rational(int a, int b){		
 	}
